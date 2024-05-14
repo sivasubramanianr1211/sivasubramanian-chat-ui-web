@@ -1,0 +1,97 @@
+@import "mixins";
+@import "theme";
+
+.chatbox-header {
+  padding: 24px;
+  @include borderB($secondary-border);
+}
+
+.chatbox-content {
+  padding: 24px;
+}
+.chatbox-content-scrollable {
+  overflow-y: auto;
+  max-height: 65vh;
+  position: relative;
+  @media screen and (min-height: 1024px) {
+    max-height: 80vh;
+  }
+}
+.header-content {
+  @include flex-container();
+  align-items: center;
+  .header-user-profile {
+    display: flex;
+    @include gap(16px);
+    text-align: left;
+    align-items: center;
+    .header-user-profile-status {
+      @include column-container();
+      text-align: left;
+    }
+  }
+}
+
+.header-title {
+  font-size: 20px;
+  @include font600();
+  line-height: 25px;
+}
+
+.header-subtitle {
+  font-size: 12px;
+  @include font600();
+  line-height: 18px;
+  display: flex;
+  @include gap(8px);
+  align-items: center;
+}
+
+.header-call-btn {
+  border-radius: 8px;
+  @include paddingTwo(10px, 16px);
+  @include flex-container;
+  @include gap(8px);
+  color: $primary-bg-color;
+  @include font600();
+  align-items: center;
+  font-size: 16px;
+  line-height: 20px;
+  border: 1px solid rgba(97, 94, 240, 0.1);
+  background: rgba(97, 94, 240, 0.1);
+}
+
+.input-box {
+  position: absolute;
+  bottom: 0px;
+  left: 0;
+  right: 0;
+  width: 100%;
+  align-items: center;
+  margin: auto;
+  background-color: $secondary-text-color;
+}
+
+.input-box input {
+  flex: 1;
+  border: 2px solid $primary-border;
+  border-radius: 12px;
+  padding: 10px 20px;
+  width: 100%;
+  box-sizing: border-box;
+  background: url(../icons/MessageSendIcon.svg) no-repeat scroll 97% 5px;
+  &::placeholder {
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 21px;
+    text-align: left;
+    color: $primary-text-color;
+  }
+}
+
+.input-attachment {
+  @include gap(24px);
+  display: flex;
+  padding: 24px;
+  align-items: center;
+}

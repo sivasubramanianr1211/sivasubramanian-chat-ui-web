@@ -1,0 +1,79 @@
+@import "mixins";
+@import "theme";
+
+.member-container {
+  width: 100%;
+  @include column-container();
+  .member-search {
+    @include paddingTwo(12px, 24px);
+    .member-input {
+      @include paddingTwo(10px, 20px);
+      height: 48px;
+      box-sizing: border-box;
+      width: 100%;
+      border-radius: 12px;
+      border: none;
+      opacity: 0px;
+      background: $secondary-bg-color-dark;
+    }
+  }
+}
+
+.member-header {
+  @include padding(24px);
+  @include borderB($secondary-border);
+  @include flex-container();
+  align-items: center;
+}
+
+.member-header-text {
+  @include font600();
+  @include gap(10px);
+  font-size: 20px;
+  line-height: 30px;
+  text-align: left;
+  display: flex;
+  align-items: center;
+  .member-count {
+    font-size: 12px;
+    line-height: 18px;
+    text-align: left;
+    @include border($secondary-bg-num-color);
+    background-color: $secondary-bg-num-color;
+    border-radius: 24px;
+    @include paddingTwo(2px, 8px);
+    margin-top: 2px;
+  }
+}
+
+.member-list-data {
+  @include paddingTwo(0px, 16px);
+  @include gap(8px);
+  .member-list-data-card {
+    display: flex;
+    @include gap(16px);
+    @include padding(12px);
+  }
+  .image {
+    object-fit: contain;
+  }
+  .text-wrapper {
+    @include flex-container();
+    width: 100%;
+    font-size: 14px;
+    @include font600();
+    line-height: 21px;
+    text-align: left;
+    color: #00000066;
+    .text {
+      @include column-container();
+      text-align: left;
+      color: $primary-text-color;
+      .subtext {
+        font-size: 12px;
+        line-height: 18px;
+        color: $primary-subtext-color;
+      }
+    }
+  }
+}

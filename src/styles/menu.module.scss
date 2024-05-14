@@ -1,0 +1,22 @@
+@import "mixins";
+
+.menu-container {
+  @include column-container();
+  @include paddingFour(16px, 16px, 24px, 16px);
+  @include gap(48px);
+  position: relative;
+  height: 100%;
+}
+
+.menu-item-container {
+  @include paddingTwo(0px, 16px);
+  @include column-container();
+  @include gap(32px);
+}
+
+.settings-container {
+  position: absolute;
+  bottom: 50px;
+  left: 50%;
+  transform: translateX(-50%);
+}

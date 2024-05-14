@@ -1,0 +1,37 @@
+@import "mixins";
+
+.flex-container {
+  display: flex;
+  background-color: $secondary-text-color;
+  height: 100vh;
+  overflow: hidden;
+  .column-1,
+  .column-2,
+  .column-3 {
+    flex: 1;
+    position: relative;
+  }
+
+  .column-1 {
+    flex: 0 0 6.11%;
+    box-shadow: 0px 0px 10px 0px $secondary-subtext-color;
+    @include column-divider(0.05);
+  }
+
+  .column-2 {
+    flex: 0 0 24.23%;
+    @include column-divider(0.08);
+  }
+
+  .column-3 {
+    flex: 0 0 44.44%;
+    @include column-divider(0.12);
+  }
+
+  .column-4 {
+    flex: 0 0 25.13%;
+    &::after {
+      content: none;
+    }
+  }
+}

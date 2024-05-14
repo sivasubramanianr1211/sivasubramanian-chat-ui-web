@@ -1,0 +1,30 @@
+@import "theme";
+@import "mixins";
+
+.message-list-wrapper {
+  @include column-container();
+  @include gap(20px);
+  .message-list {
+    @include column-container();
+    @include gap(10px);
+    font-size: 14px;
+    line-height: 21px;
+    font-weight: 400;
+    overflow-y: auto;
+    .sender {
+      @include paddingTwo(8px, 16px);
+      @include gap(10px);
+      border-radius: 12px;
+      opacity: 0px;
+      background-color: $secondary-bg-color;
+      align-self: flex-start;
+    }
+
+    .receiver {
+      @extend .sender;
+      background-color: $primary-bg-color;
+      color: $secondary-text-color;
+      align-self: flex-end;
+    }
+  }
+}

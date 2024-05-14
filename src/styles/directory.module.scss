@@ -1,0 +1,83 @@
+@import "theme";
+@import "mixins";
+
+.directory-container {
+  @include column-container();
+  @include gap(24px);
+
+  .directory-header {
+    @include flex-container();
+    @include padding(24px);
+    align-items: center;
+    font-size: 20px;
+    @include font600();
+    line-height: 30px;
+    text-align: left;
+    @include borderB($secondary-border);
+  }
+  .directory-wrapper {
+    overflow-y: auto;
+    max-height: 80vh;
+    @media screen and (min-height: 1024px) {
+      max-height: 100vh;
+    }
+  }
+  .team-member-list {
+    // @include borderB($secondary-border);
+    padding: 0px 16px;
+    .header {
+      text-align: left;
+      font-size: 14px;
+      @include font600();
+      line-height: 21px;
+      text-align: left;
+      margin-bottom: 8px;
+      display: flex;
+      @include gap(8px);
+      .member-count {
+        font-size: 12px;
+        line-height: 18px;
+        text-align: left;
+        @include border($secondary-bg-num-color);
+        background-color: $secondary-bg-num-color;
+        border-radius: 24px;
+        @include paddingTwo(2px, 8px);
+        margin-top: 2px;
+      }
+    }
+
+    .member-list-data-card {
+      display: flex;
+      @include gap(16px);
+      @include padding(12px);
+      text-align: left;
+      .text-wrapper {
+        @include flex-container();
+        width: 100%;
+        font-size: 14px;
+        @include font600();
+        line-height: 21px;
+        text-align: left;
+        color: $primary-subtext-color;
+        .text {
+          @include column-container();
+          text-align: left;
+          color: $primary-text-color;
+          .subtext {
+            font-size: 12px;
+            line-height: 18px;
+            color: $primary-subtext-color;
+          }
+        }
+      }
+    }
+  }
+  .file-list {
+    @extend .team-member-list;
+    border-top: 1px solid $secondary-border;
+    .file-header {
+      @extend .header;
+      margin-top: 24px;
+    }
+  }
+}

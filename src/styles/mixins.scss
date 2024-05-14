@@ -1,0 +1,52 @@
+@import 'theme';
+
+@mixin column-container {
+  display: flex;
+  flex-direction: column;
+}
+
+@mixin flex-container {
+  display: flex;
+  justify-content: space-between;
+}
+
+@mixin paddingFour($top, $right, $bottom, $left) {
+  padding: $top $right $bottom $left;
+}
+
+@mixin paddingTwo($y, $x) {
+  padding: $y $x;
+}
+
+@mixin padding($x) {
+  padding: $x;
+}
+
+@mixin border($bordercolor){
+  border: 1px solid $bordercolor;
+}
+
+@mixin borderB($bordercolor){
+  border-bottom: 1px solid $bordercolor;
+}
+
+@mixin gap($gap) {
+  gap: $gap;
+}
+
+@mixin font600() {
+  font-weight: 600;
+}
+
+@mixin column-divider($opacity) {
+  &::after {
+    content: "";
+    position: absolute;
+    height: 100%;
+    width: 1px;
+    background-color: $primary-text-color;
+    opacity: $opacity;
+    right: 0;
+    top: 0;
+  }
+}
